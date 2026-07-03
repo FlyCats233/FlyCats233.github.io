@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN ">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirk的博客 || 我为什么要写博客（含搭建问题解决思路）</title>
+    <meta name="author" content="Kirk Reeve">
+    <meta name="description" content=" ">
+    <meta name="keywords" content=" ">
+    <link rel="icon" href="/avatar.png">
+    <link rel="stylesheet" href="/css/antd.min.css">
+    
+    <link rel="stylesheet" href="/css/maiden-theme.css">
+    
+    <script src="/js/vue.js"></script>
+    <script src="/js/antd.min.js"></script>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+
+    <div id="loading"
+        style="height: 100vh; width: 100%; position: fixed;display: flex;z-index: 200; justify-content: space-between;">
+        <div id="loadleft" style="width: 50%;background-color: #ffffff;transition: width 0.6s ease-out;"></div>
+        <div id="loadright" style="width: 50%;background-color: #ffffff;transition: width 0.6s ease-out;"></div>
+        <div
+            style="position: fixed; height: 100vh; width: 100%;display: flex;justify-content: center;align-items: center;">
+            <div id="loadcontent"
+                style="width:400px;height:400px;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px#a3ddfb; text-align:center;opacity:1;transition:opacity 0.3s ease-out;">
+                <div>
+                    <h2>LOADING...</h2>
+                    <p>加载过慢请开启缓存(浏览器默认开启)</p>
+                    <div>
+                        <img src="/dancingkitty.gif" alt="loading">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="layout">
+        <transition name="into">
+            <div v-show="show_page" style="display: none;">
+                <div id="menu_show">
+                     
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Kirk的博客</span>
+        </a>
+        
+        <a href="/">
+            <span>
+                <a-icon type="home" theme="filled" />
+            </span>
+            <span>home</span>
+        </a>
+        
+        <a target="_blank" rel="noopener" href="https://github.com/FlyCats233">
+            <span>
+                <a-icon type="idcard" theme="filled" />
+            </span>
+            <span>about</span>
+        </a>
+        
+        <a href="/archives">
+            <span>
+                <a-icon type="folder" theme="filled" />
+            </span>
+            <span>archives</span>
+        </a>
+        
+        <a href="/like/categories">
+            <span>
+                <a-icon type="book" theme="filled" />
+            </span>
+            <span>categories</span>
+        </a>
+        
+        <a href="/like/tags">
+            <span>
+                <a-icon type="tags" theme="filled" />
+            </span>
+            <span>tags</span>
+        </a>
+        
+    </div>
+
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div :class="'title'" @click="menu_show=!menu_show">
+            <span style="margin-right: 10px;">
+                <a-icon type="appstore" theme="filled" />
+            </span>
+            <span>Kirk的博客</span>
+        </div>
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width:20px; max-width:50px; width: 10%">
+                        <a-icon type="home" theme="filled" />
+                    </div>
+                    <div style="min-width:100px;max-width: 150%;width: 20%;">home</div>
+                </div>
+            </a>
+            
+            <a target="_blank" rel="noopener" href="https://github.com/FlyCats233">
+                <div class="item">
+                    <div style="min-width:20px; max-width:50px; width: 10%">
+                        <a-icon type="idcard" theme="filled" />
+                    </div>
+                    <div style="min-width:100px;max-width: 150%;width: 20%;">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width:20px; max-width:50px; width: 10%">
+                        <a-icon type="folder" theme="filled" />
+                    </div>
+                    <div style="min-width:100px;max-width: 150%;width: 20%;">archives</div>
+                </div>
+            </a>
+            
+            <a href="/like/categories">
+                <div class="item">
+                    <div style="min-width:20px; max-width:50px; width: 10%">
+                        <a-icon type="book" theme="filled" />
+                    </div>
+                    <div style="min-width:100px;max-width: 150%;width: 20%;">categories</div>
+                </div>
+            </a>
+            
+            <a href="/like/tags">
+                <div class="item">
+                    <div style="min-width:20px; max-width:50px; width: 10%">
+                        <a-icon type="tags" theme="filled" />
+                    </div>
+                    <div style="min-width:100px;max-width: 150%;width: 20%;">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        <div class="curtain" v-show="menu_show"></div>
+    </div>
+
+</nav>
+                </div>
+
+                <div id="main">
+                     
+<link rel="stylesheet" href="/css/post-body.css">
+<div class="article">
+    <div>
+        <h1>我为什么要写博客（含搭建问题解决思路） </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <a-icon type="calendar" theme="filled" />
+            </span>
+            2026/7/3
+        </span>
+
+        
+
+        
+
+        <span class="tags">
+            <span class="icon">
+                <a-icon type="tags" theme="filled" />
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Blog" style=color:#00bcd4>
+                    Blog
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Hexo" style=color:#879cff>
+                    Hexo
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/GitHub" style=color:#ff7d73>
+                    GitHub
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/YAML" style=color:#ffa2c4>
+                    YAML
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+
+    <div class="content" v-pre>
+        <p>博客，就是Web Log，后来简读成Blog，用于在网络上记录自己的任何东西，这就是博客的来源。在社交媒体远不发达的上个时代，人们通过博客在互联网上留下自己的痕迹。那时，互联网有门槛，博客更有门槛，但拥有这项技能的人，却更热衷于免费撰写一篇又一篇的博客，这些博客成为了从上个互联网时代流传下来的知识瑰宝。如今已鲜少有人会制作一个专属于自己的博客，更不会在一个没有流量的不知名网站上记录自己，更多人愿意在QQ微信、抖音B站等社交媒体上记录，但抛开这些流量话题，对自己而言，对我而言，博客在如今，不仅是一种年少轻狂、标新立异的自我表达，同时也是一种不会担心被凝视的表达。现在的互联网社区早已乌烟瘴气，而在陌生而又古老的博客面前，人们也许会保留一份自己心中的平静。</p>
+<span id="more"></span>
+
+<h2 id="平静，独自一人的舞台"><a href="#平静，独自一人的舞台" class="headerlink" title="平静，独自一人的舞台"></a>平静，独自一人的舞台</h2><p>其实一切的契机是在实习上班期间，有一些<del>没事摸鱼的</del>空闲，但这时候不能光明正大在工位玩游戏刷视频，所以我就打算用电脑学点好玩的，比如重新拿起前年秋天程序设计课上的cpp大作业，就是一个比较粗糙的<code>Tetris</code>俄罗斯方块小游戏，我打算给它进行一次重构，做成一个玩法更新颖、有独立UI的游戏，当然这个过程少不了ai辅助，毕竟能偷懒谁不干呢(*￣3￣)╭其实我还想靠ai设计做一个<strong>Minecraft</strong>的模组，不过那都是后话了。这时我在想，怎么记录我的这些好主意和制作经验呢？<strong>GitHub</strong>可以用来托管代码和方便更新迭代，那么一个程序员经常会有的另一个东西就是自己的博客网站了，博客网站又可以免费挂载在<del>GayHub</del> page上，这样服务器和网址备案的问题又解决了，简单查阅了一下教程，用<code>Hexo</code>实现静态个人博客很方便，主题自由选取，何乐而不为呢？于是说干就干，中间也遇到了很多困难，不过在搜索引擎和ds老师的指导下全部解决~</p>
+<p><img src="/../images/Heartheartart_Neuro.gif" alt="image" title="neuro可爱捏"></p>
+<p>具体的搭建每一步我就不细说了，我也是按照网上的教程一步一步来的，这里介绍一些我遇到过的问题解决思路</p>
+<ol>
+<li>根目录配置文件<code>_config.yml</code><pre><code class="language-yml"># Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+type: git
+repository: git@github.com:FlyCats233/FlyCats233.github.io.git
+branch: main # &lt;--你的分支名
+</code></pre>
+ 因为现在版本的GitHub主分支默认名称从Master变成了main，所以需要修改配置文件中的<code>branch</code>值为main，如果不想产生额外分支的话。</li>
+<li>主题<code>theme</code><br> <code>theme/my_theme/_config.yml</code>是主题的配置文件，但是<strong>Hexo</strong>允许在根目录下新建一个<code>_config.my_theme.yml</code>文件，用来便携地修改这个主题的配置，默认将<code>theme/my_theme/_config.yml</code>的内容与<code>_config.my_theme.yml</code>的内容进行合并，如果冲突，后者的<em>优先级更高</em>。所以，我将主题的原配置文件的所有实际内容删除，只留下空占位，然后在根目录下新建一个<code>_config.my_theme.yml</code>进行配置，这样就不需要每次都进入特定主题文件夹下配置了。</li>
+<li>主题配置文件<code>_config.my_theme.yml</code>，这里我用的<a target="_blank" rel="noopener" href="https://github.com/korilin/hexo-theme-particle"><em>Particle</em></a>主题<pre><code class="language-yml"># Gitalk
+# https://github.com/gitalk/gitalk
+gitalk:
+enable: true
+clientID: xxx # GitHub Application Client ID
+clientSecret: xxx # GitHub Application Client Secret
+repo: gitalk-comments # The name of repository of store comments
+owner: FlyCats233 # GitHub repo owner
+admin: FlyCats233 # GitHub repo owner and collaborators, only these guys can initialize github issues
+language: zh-CN # en, zh-CN, zh-TW, es-ES, fr, ru, de, pl and ko are currently available.
+</code></pre>
+ Gitalk是Hexo的一个评论插件，部署起来比较简单，主要是<code>language</code>会有一个问题，如果把默认的<code>en</code>改为<code>zh-CN</code>并上传，会导致GitHub上的Action发生错误，从而部署page失败<pre><code class="language-bat">Run actions/deploy-pages@v5
+(node:2159) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Fetching artifact metadata for &quot;github-pages&quot; in this workflow run
+Found 1 artifact(s)
+Creating Pages deployment with payload:
+{
+    &quot;artifact_id&quot;: 8059042112,
+    &quot;pages_build_version&quot;: &quot;e5071c77dbeea030cd581b1b1811356e7d838782&quot;,
+    &quot;oidc_token&quot;: &quot;***&quot;
+}
+Created deployment for e5071c77dbeea030cd581b1b1811356e7d838782, ID: e5071c77dbeea030cd581b1b1811356e7d838782
+Getting Pages deployment status...
+Error: Deployment failed, try again later.
+</code></pre>
+ 原因是<strong>YAML</strong>解析器将<code>zh-CN</code>中的连字符<code>-</code>误解释为了减号运算符，导致配置项被错误解析，从而在后续部署流程中引发了连锁反应。而用引号包裹后，<strong>YAML</strong>就明确知道这是一个字符串，不再尝试进行数学运算，一切就恢复正常了。将<code>zh-CN</code>加上引号，<code>&quot;zh-CN&quot;</code>，问题完美解决。</li>
+</ol>
+
+    </div>
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <div id="comment">
+        <div id="gitalk-container">
+        </div>
+    </div>
+    
+</div>
+                     
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2026 - 2026 Kirk的博客
+            <span class="footer-icon">
+                <a-icon type="flag" theme="filled" /></span>
+            @Kirk Reeve
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/korilin/hexo-theme-particle">Particle Theme</a></div>
+        
+    </div>
+
+</footer>
+
+<script src="/js/highlight.min.js"></script>
+<script src="/js/particle.js"></script>
+                </div>
+            </div>
+        </transition>
+    </div>
+
+    <script>
+    new Vue({
+        el: "#layout",
+        data: {
+            show_page: false,
+            onload_menu: false,
+            menu_show: false,
+            card_top: 100
+        },
+        created: function () {
+            var that = this
+            window.onload = function () {
+                that.show_page = true
+                document.getElementById("loadcontent").style.opacity = 0
+                setTimeout(function () {
+                    document.getElementById("loadleft").style.width = 0
+                    document.getElementById("loadright").style.width = 0
+                }, 300)
+                setTimeout(function () {
+                    document.getElementById("loading").style = "display:none"
+                }, 600)
+            }
+        },
+        mounted: function () {
+            var that = this
+            window.addEventListener('scroll', function (e) {
+                that.menu_show = false
+            })
+        },
+        methods: {
+            home_click: function () {
+                window.scrollTo({
+                    top: window.innerHeight - 80,
+                    behavior: "smooth",
+                });
+            }
+        }
+    })
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: 'Ov23liVpZy02T6EGJgqP',
+        clientSecret: '21e7694ad91059fd03feeb87503804bba66a871f',
+        repo: 'gitalk-comments',      // The repository of store comments,
+        owner: 'FlyCats233',
+        admin: ['FlyCats233'],
+        language: 'zh-CN',
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: true  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+
+</body>
+
+</html>
